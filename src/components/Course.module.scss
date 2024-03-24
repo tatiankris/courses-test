@@ -1,0 +1,28 @@
+@import "../app/sass/mixins";
+
+.courseBox {
+  @include mainFont();
+  color: #39414b;
+  flex: 0 0 calc(33.333% - 18px);
+  overflow: hidden;
+  min-height: 210px;
+  width: 177px;
+  border-radius: 18px;
+  box-shadow: 0 6px 14px -4px rgba(0, 0, 0, 0.3);
+  line-height: 18px;
+  .imageBox {
+    height: 162px;
+    width: 100%;
+    background: #26d026;
+    .image {
+      display: block;
+      height: 100%;
+      margin: auto;
+      padding: 9px;
+    }
+  }
+  .label {
+    cursor: pointer;
+    margin: 12px 18px 18px 18px;
+  }
+}

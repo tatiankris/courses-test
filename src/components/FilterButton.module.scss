@@ -1,0 +1,28 @@
+@import '../app/sass/mixins';
+
+.customButton {
+  @include mainFont();
+  margin-bottom: 1px;
+  display: block;
+  width: 100%;
+  height: 41px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: white;
+  line-height: 18px;
+  letter-spacing: -0.1px;
+  color: #39414b;
+  text-align: start;
+  cursor: pointer;
+  &:hover {
+    background: rgba(38, 208, 38, 0.13);
+  }
+}
+.activeButton {
+  background: #5fbf77;
+  color: white;
+  &:hover {
+    background: #5fbf77;
+  }
+}
