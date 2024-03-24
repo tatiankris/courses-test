@@ -2,6 +2,8 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit'
 import { getCourses } from './coursesThunks'
 import { CourseType } from '../../types/CourseType'
 
+const allThemes = process.env.ALL_THEMES || 'Все темы'
+
 type CoursesStateType = {
   tags: string[] | null
   allCourses: CourseType[] | null
@@ -21,7 +23,7 @@ const coursesSlice = createSlice({
     filterCourses(state, action) {
       state.filteredCourses = state.allCourses
         ? state.allCourses.filter((c) => {
-            return action.payload === 'Все темы' ? true : c.tags.includes(action.payload)
+            return action.payload === allThemes ? true : c.tags.includes(action.payload)
           })
         : []
     },
@@ -39,7 +41,7 @@ const coursesSlice = createSlice({
           })
           return acc
         }, [] as string[])
-        state.tags = ['Все темы', ...tags]
+        state.tags = [allThemes, ...tags]
       }
     })
     builder.addMatcher(isAnyOf(getCourses.rejected, getCourses.pending), (state, action) => {})
